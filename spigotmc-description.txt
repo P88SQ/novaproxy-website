@@ -1,0 +1,296 @@
+[CENTER]
+[IMG]https://i.imgur.com/YOUR_BANNER.png[/IMG]
+
+[SIZE=6][COLOR=#6366f1][B]⚡ NovaProxy[/B][/COLOR][/SIZE]
+[SIZE=4][I]The Next Generation Minecraft Proxy[/I][/SIZE]
+
+[SIZE=3][COLOR=#94a3b8]Built for performance. Designed for scale.[/COLOR][/SIZE]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#22d3ee]✨ Why NovaProxy?[/COLOR][/SIZE]
+
+NovaProxy is a high-performance Minecraft proxy built from the ground up using modern technologies. 
+It delivers unmatched speed, security, and reliability for your Minecraft network.
+
+[TABLE]
+[TR]
+[TD][SIZE=4][B]🚀 10x Faster[/B][/SIZE]
+Than traditional proxies[/TD]
+[TD][SIZE=4][B]🛡️ 99.9% Uptime[/B][/SIZE]
+Guaranteed reliability[/TD]
+[TD][SIZE=4][B]👥 50K+ Players[/B][/SIZE]
+Concurrent support[/TD]
+[/TR]
+[/TABLE]
+
+[/CENTER]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]⚡ Features[/COLOR][/SIZE]
+
+[LIST]
+[*][B][COLOR=#22c55e]Lightning Fast Performance[/COLOR][/B]
+Built on Netty with optimized packet handling. Zero-copy packet forwarding and smart memory allocation.
+
+[*][B][COLOR=#22c55e]Advanced Antibot Protection[/COLOR][/B]
+Multi-layer bot protection system including:
+  [LIST]
+  [*]Rate limiting per IP
+  [*]Ping-before-join verification
+  [*]Username validation
+  [*]Connection throttling
+  [*]Intelligent attack mode detection
+  [/LIST]
+
+[*][B][COLOR=#22c55e]Velocity Plugin Compatibility[/COLOR][/B]
+Full Velocity API support - use your existing Velocity plugins without any modifications!
+
+[*][B][COLOR=#22c55e]Modern Protocol Support[/COLOR][/B]
+Supports Minecraft 1.7.2 to 1.21+ with automatic protocol translation.
+
+[*][B][COLOR=#22c55e]Professional Console[/COLOR][/B]
+JLine3-powered console with tab completion, command history, and colored output.
+
+[*][B][COLOR=#22c55e]Scalable Architecture[/COLOR][/B]
+Handle 50,000+ concurrent players with ease. Native epoll/kqueue support for maximum performance.
+[/LIST]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]📊 Performance Comparison[/COLOR][/SIZE]
+
+[CODE]
+┌─────────────────────────────────────────────────┐
+│  Requests per Second (Higher is Better)         │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│  NovaProxy    ████████████████████████  95k/s   │
+│  Velocity     ███████████              45k/s   │
+│  BungeeCord   ██████                   25k/s   │
+│                                                 │
+└─────────────────────────────────────────────────┘
+[/CODE]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]🛡️ Antibot System[/COLOR][/SIZE]
+
+NovaProxy includes a powerful built-in antibot system to protect your server from bot attacks:
+
+[SPOILER="Antibot Features"]
+[LIST]
+[*][B]Rate Limiting[/B] - Limits connections per IP address
+[*][B]Ping Before Join[/B] - Requires clients to ping before connecting
+[*][B]Username Validation[/B] - Blocks invalid/suspicious usernames
+[*][B]Connection Throttle[/B] - Prevents rapid reconnection attempts
+[*][B]Attack Mode[/B] - Automatically increases security during attacks
+[*][B]Whitelist Mode[/B] - Emergency whitelist during severe attacks
+[/LIST]
+[/SPOILER]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]⚙️ Configuration[/COLOR][/SIZE]
+
+[SPOILER="config.yml Example"]
+[CODE=YAML]
+# NovaProxy Configuration
+bind: "0.0.0.0:25577"
+motd: "&b&lNovaProxy &8» &7High Performance Proxy"
+max-players: 1000
+online-mode: true
+
+servers:
+  lobby:
+    address: "localhost:25565"
+    motd: "Lobby Server"
+  survival:
+    address: "localhost:25566"
+    motd: "Survival Server"
+
+default-server: "lobby"
+fallback-server: "lobby"
+
+antibot:
+  enabled: true
+  rate-limit:
+    enabled: true
+    max-connections-per-second: 5
+  ping-before-join:
+    enabled: true
+    timeout: 30000
+  attack-mode:
+    enabled: true
+    threshold: 50
+[/CODE]
+[/SPOILER]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]📦 Installation[/COLOR][/SIZE]
+
+[LIST=1]
+[*]Download NovaProxy from this page
+[*]Place the JAR file in your desired directory
+[*]Run with: [ICODE]java -jar NovaProxy.jar[/ICODE]
+[*]Edit the generated [ICODE]config.yml[/ICODE] file
+[*]Restart NovaProxy
+[*]Connect your backend servers
+[/LIST]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]💻 Commands[/COLOR][/SIZE]
+
+[TABLE]
+[TR]
+[TH]Command[/TH]
+[TH]Description[/TH]
+[TH]Permission[/TH]
+[/TR]
+[TR]
+[TD][ICODE]/server <name>[/ICODE][/TD]
+[TD]Switch to a server[/TD]
+[TD]novaproxy.command.server[/TD]
+[/TR]
+[TR]
+[TD][ICODE]/list[/ICODE][/TD]
+[TD]List online players[/TD]
+[TD]novaproxy.command.list[/TD]
+[/TR]
+[TR]
+[TD][ICODE]/send <player> <server>[/ICODE][/TD]
+[TD]Send player to server[/TD]
+[TD]novaproxy.command.send[/TD]
+[/TR]
+[TR]
+[TD][ICODE]/alert <message>[/ICODE][/TD]
+[TD]Broadcast message[/TD]
+[TD]novaproxy.command.alert[/TD]
+[/TR]
+[TR]
+[TD][ICODE]/antibot[/ICODE][/TD]
+[TD]Antibot management[/TD]
+[TD]novaproxy.command.antibot[/TD]
+[/TR]
+[TR]
+[TD][ICODE]/plugins[/ICODE][/TD]
+[TD]List loaded plugins[/TD]
+[TD]novaproxy.command.plugins[/TD]
+[/TR]
+[TR]
+[TD][ICODE]/end[/ICODE][/TD]
+[TD]Shutdown proxy[/TD]
+[TD]novaproxy.command.end[/TD]
+[/TR]
+[/TABLE]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]🔌 Plugin Development[/COLOR][/SIZE]
+
+NovaProxy supports both native plugins and Velocity plugins!
+
+[SPOILER="Native Plugin Example"]
+[CODE=Java]
+package com.example.myplugin;
+
+import dev.novaproxy.plugin.Plugin;
+import dev.novaproxy.plugin.PluginDescription;
+
+@PluginDescription(
+    name = "MyPlugin",
+    version = "1.0.0",
+    author = "YourName"
+)
+public class MyPlugin extends Plugin {
+    
+    @Override
+    public void onEnable() {
+        getLogger().info("MyPlugin enabled!");
+    }
+    
+    @Override
+    public void onDisable() {
+        getLogger().info("MyPlugin disabled!");
+    }
+}
+[/CODE]
+[/SPOILER]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]💰 Pricing[/COLOR][/SIZE]
+
+[TABLE]
+[TR]
+[TH][SIZE=4]Starter[/SIZE][/TH]
+[TH][SIZE=4][COLOR=#6366f1]Professional[/COLOR][/SIZE][/TH]
+[TH][SIZE=4]Enterprise[/SIZE][/TH]
+[/TR]
+[TR]
+[TD][SIZE=5][B]$19[/B][/SIZE]
+[I]lifetime[/I][/TD]
+[TD][SIZE=5][B][COLOR=#6366f1]$49[/COLOR][/B][/SIZE]
+[I]lifetime[/I][/TD]
+[TD][SIZE=5][B]$149[/B][/SIZE]
+[I]lifetime[/I][/TD]
+[/TR]
+[TR]
+[TD]Up to 500 players
+Basic antibot
+Velocity plugins
+Community support[/TD]
+[TD]Up to 5,000 players
+Advanced antibot
+Velocity plugins
+Priority support
+Priority updates[/TD]
+[TD]Unlimited players
+Enterprise antibot
+Velocity plugins
+24/7 Priority support
+Priority updates
+Custom branding[/TD]
+[/TR]
+[/TABLE]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]❓ FAQ[/COLOR][/SIZE]
+
+[SPOILER="Is NovaProxy compatible with my existing plugins?"]
+Yes! NovaProxy includes a full Velocity API compatibility layer, so most Velocity plugins will work without any modifications. We also support native NovaProxy plugins for maximum performance.
+[/SPOILER]
+
+[SPOILER="What Minecraft versions are supported?"]
+NovaProxy supports Minecraft versions from 1.7.2 to 1.21+ with automatic protocol translation. Players on different versions can connect to the same proxy.
+[/SPOILER]
+
+[SPOILER="Can I migrate from Velocity or BungeeCord?"]
+Absolutely! NovaProxy uses a similar configuration format and supports Velocity plugins, making migration straightforward. We provide migration guides in our documentation.
+[/SPOILER]
+
+[SPOILER="Do I get updates for free?"]
+Yes! All licenses include lifetime updates. Professional and Enterprise plans receive priority access to new features and updates.
+[/SPOILER]
+
+[HR][/HR]
+
+[SIZE=5][COLOR=#6366f1]📞 Support[/COLOR][/SIZE]
+
+[LIST]
+[*][B]Discord:[/B] [URL='https://discord.gg/novaproxy']Join our Discord[/URL]
+[*][B]GitHub:[/B] [URL='https://github.com/novaproxy']GitHub Repository[/URL]
+[*][B]Documentation:[/B] [URL='https://docs.novaproxy.dev']docs.novaproxy.dev[/URL]
+[/LIST]
+
+[HR][/HR]
+
+[CENTER]
+[SIZE=3][COLOR=#94a3b8]© 2024 NovaProxy. All rights reserved.[/COLOR][/SIZE]
+
+[SIZE=4][B][COLOR=#6366f1]⚡ NovaProxy - Built for Speed, Designed for Scale[/COLOR][/B][/SIZE]
+[/CENTER]
